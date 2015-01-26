@@ -1,3 +1,9 @@
+@font-face{
+			font-family:'Remachine Script Personal Use';
+			src: url('RemachineScript_Personal_Use.ttf')  format('truetype');
+		}
+
+
 body {
 		background-color:#303030;
 		background-image:url(00046_1024.jpg);
