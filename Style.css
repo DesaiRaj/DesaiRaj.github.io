@@ -8,7 +8,7 @@ body {
 		background-color:#303030;
 		background-image:url(00046_1024.jpg);
 		background-size:cover;
-		background-repeat:none;;
+		background-repeat:none;
 	}
 	#tint{
 		position:absolute;
@@ -67,37 +67,44 @@ body {
 		font-size:35px;
 		color:white;
 	}
-	#myForm{
-		position:absolute;
-		top:300px;
-		left:900px;
-		color:white;
-		font-family:Comic Sans MS;
-		font-size:25px;
-		font-weight:100;
-		opacity:0;
-	
-	}
 	a {
 		color:white;
 		font-style:italic;
 	}
-	#okButton{
+	#myForm{
+		position:absolute;
+		opacity:0;
+	}
+	.formelement{
+		position:relative;
+		left:50px;
 		margin-top:10px;
+		font-family:Comic Sans MS;
+		color:white;
+		font-size:25px;
+		font-weight:100;
+	
+	}
+	#name,#comment{
+		position:relative;
+		left:5px;
+		font-family:Comic Sans MS;
+		font-size:20px;
+		font-weight:100;
+	
+	}
+	#okButton{
+		position:relative;
+		left:50px;
 		text-align:center;
+		margin-top:10px;
 		font-family:Comic Sans MS;
 		color:black;
 		font-size:20px;
 		font-weight:100;
 		background-color:white;
-		position:relative;
-		left:340px;
 		width:80px;
 		height:40px;
 		border-radius:10px;
 	}
-	input,textarea{
-		font-size:20px;
-		font-family:Comic Sans MS;
-		margin-top:10px;
-	}
+	

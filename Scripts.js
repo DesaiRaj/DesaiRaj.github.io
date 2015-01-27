@@ -1,7 +1,6 @@
 function movedp()
 	{
 		var i=1;
-		//var x = document.getElementById('dp');
 		window.setInterval(function move(){
 											if(i<50)
 											{
@@ -17,7 +16,6 @@ function movedp()
 	function movename()
 	{
 		var i=-10;
-		//var x = document.getElementById('dp');
 		window.setInterval(function move(){
 											if(i<70)
 											{
@@ -32,7 +30,24 @@ function movedp()
 	}
 	function myFormAppear()
 	{
+		var i=0;
 		document.getElementById('myForm').style.opacity = 1;
+		document.getElementById('myForm').style.left = 0 + 'px';
+		document.getElementById('myForm').style.top = 675 + 'px';
+		window.setInterval(function scrollDownP(){
+												if(i<6)
+												{
+													i++;
+													scrollDown();
+												}
+												else
+													clearInterval();
+												},50);
+	}
+	
+	function scrollDown()
+	{
+		window.scrollBy(0,50);
 	}
 	
 	movedp();
