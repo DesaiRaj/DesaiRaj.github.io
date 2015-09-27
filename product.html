@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> XYZ </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		html,body{
+			/*background:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(trial.jpg);*/
+			height:100%;
+			background-image: url('trial.jpg');
+		}
+		.product-navigation{
+			position:fixed;
+			top: 0px;
+			left:0px;
+			right:0px;
+		}
+		.nav #login{
+			padding-right:10px;
+		}
+		.input-group{
+			width:100%;
+		}
+		.form-control{
+			width:100%;
+		}
+		.shpping-display-schoolName{
+			text-align: center;
+			font-size: 2.5vw;
+			padding: 10px;
+			height: auto;
+			border-bottom: 1px solid gray;
+			box-shadow:0 0 10px #000000;
+			margin-top: 50px;
+			width: 100%;
+			background-color: #ffffff;
+			/*background-image: url('1.jpg');*/
+			/*font-family: Eraser;*/
+			/*color: white;*/
+		}
+		
+		.product-cart{
+			position:relative;
+			min-height: 50%;
+			height:auto;
+		}
+		.product-imageArea{
+			position: relative;
+			min-height: 100%;
+			height:auto;
+   			overflow:auto;
+		}
+		.product-imageArea-smallImg{
+			position:relative;
+			top:50px;
+			cursor: pointer;
+		}
+		.product-imageArea-largeImage{
+			padding: 0;
+			position: relative;
+			margin-top: 50px;
+			height: 25vw;
+		}
+		.product-imageArea-smallImg-img{
+			margin-top: 10px;
+			height: 7.5vw;
+			padding: 0;
+		}
+		.product-imageArea-smallImg-img:hover{
+   			border: 2px solid gray;
+   			opacity: 0.7;
+   			cursor: hand;
+		}
+		.product-imageArea-discription{
+			border: 1px solid grey;
+			height: auto;
+		}
+		.product-info{
+			position: relative;
+			top: 50px;
+			height: 100%;
+		}
+		.product-info-school{
+			padding: 0;
+			margin-top: 50px;
+
+		}
+		#product-info-school-Name{
+			font-size: 3vw;
+		}
+		.product-info-school-logo{
+			height: 7.5vw;
+		}
+		.product-info-priceDetail{
+			background-color: #ffffff;
+			padding: 0;
+		}
+		.product-info-priceDetail-size{
+			display: inline-block;
+			width:50px; 
+			padding: 7px;
+			margin-bottom: 10px;
+			margin-right: 5px;
+			background-color: #ffffff;
+			border: 1px solid darkgrey;
+			cursor: pointer;
+			background-color: lightgrey;
+		}
+		.product-info-priceDetail-size:hover{
+			box-shadow: 0 0 2px 2px #888;
+		}
+		.cart-img{
+			width: 2.5vw;
+			height: 2.5vw;
+		}
+		.product-cart-cartBtn{
+			position: relative;
+			margin-top: 50px;
+			width: 100%;
+		}
+		.product-cart-checkoutBtn{
+			position: absolute;
+			width: 100%;
+			top: 100%;
+			margin-top: 25px;
+		}
+		.product-cart-cartProduct{
+			padding: 0px;
+		}
+		.product-info-addToCart{
+			margin-bottom: 40px;
+		}
+		h1{
+			font-size: 2.5vw;
+		}
+		h6{
+			font-size: 1.2vw;
+		}
+		.form-inline.form-inline-xs .form
+		{
+		    display: inline-block;
+		    vertical-align: middle;
+		    margin-bottom: 0px;
+		}
+		.form-inline.form-inline-xs .form .input
+		{
+		    display: inline-table;
+		    vertical-align: middle;
+		}
+		.btn{
+			line-height: 35px;
+		}
+		.product-cart-cartProduct-description{
+			margin-top: 25px;
+			background-color: white;
+		}
+		.cart-product-photo{
+			margin-top: 25px;
+			height: 100px;
+			padding: 0px;
+			background-color: white;
+		}
+
+		@media (max-width: 768px) {
+			.product-imageArea-largeImage{
+				height: 40vw;
+			}
+			.product-imageArea-smallImg-img{
+				height: 12vw;
+			}
+			.product-info{
+				margin-left: 20px;
+			}
+			.shpping-display-schoolName{
+				font-size: 5vw;
+			}
+			h1{
+				font-size: 3.5vw;
+			}
+			h6{
+				font-size: 2vw;
+			}
+			.product-info-school-logo{
+				height: 10vw;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="col-sm-12 col-xs-12 shpping-display-schoolName">
+		Shree P V Modi 
+	</div>
+	<div class="col-sm-4 col-xs-6 product-imageArea pull-left">
+		<div class="row">
+			<div class="product-imageArea-smallImg col-sm-3 col-xs-3">
+				<div class="row">
+					<div class="product-imageArea-smallImg-img col-sm-10 col-sm-offset-1">
+						<img src="shirt.jpg" width="100%" height="100%">
+					</div>
+				</div>
+				<div class="row">
+					<div class="product-imageArea-smallImg-img col-sm-10 col-sm-offset-1">
+						<img src="shirt.jpg" width="100%" height="100%">
+					</div>
+				</div>
+				<div class="row">
+					<div class="product-imageArea-smallImg-img col-sm-10 col-sm-offset-1">
+						<img src="shirt.jpg" width="100%" height="100%">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 col-xs-9">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 product-imageArea-largeImage">
+						<img src="shirt.jpg" width="100%" height="100%">
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="product-imageArea-discription">
+			<ul>
+				<li><b>Free</b> Home/School DELIVERY</li>
+				<li><b>Authorized</b> by Scool</li>
+				<li><b>100%</b>AUTHENTIC BRANDSAND PRODUCTS </li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="product-info col-sm-5 col-xs-5">
+		<div class="row">
+			<div class="product-info-priceDetail col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><h1><b> MRP 250 Rs</b></h1></div>
+					<div class="col-sm-10 col-xs-10 col-sm-offset-1 col-xs-offset-1">
+						<h6>Select size according to standard</h6>
+						<h6><u><b>See size chart</b></u></h6>
+						<br>
+						<div class="product-info-priceDetail-size" id="1">
+							LKG
+						</div>
+						<div class="product-info-priceDetail-size" id="2">
+							HKG
+						</div>
+						<div class="product-info-priceDetail-size" id="3">
+							1<sup>st</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="4">
+							2<sup>nd</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="5">
+							3<sup>rd</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="6">
+							4<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="7">
+							5<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="8">
+							6<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="9">
+							7<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="10">
+							8<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="11">
+							9<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="12">
+							10<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="13">
+							11<sup>th</sup>
+						</div>
+						<div class="product-info-priceDetail-size" id="14">
+							12<sup>th</sup>
+						</div>
+						<br>
+						<br>
+						<form role="form" class="form-inline form-inline-xs">
+						    <div class="form">
+						        <div class="input">
+						            <div class="input-group-addon">
+						                <span>Quantity</span>
+						            </div>
+						            <input class="form-control" type="number" value="1" min="1">
+						        </div>
+						    </div>
+						</form>
+						<br><br>
+						<div class="product-info-addToCart col-sm-10 col-sm-offset-1">
+							<form method="post">
+								<input type="button" class="btn btn-warning btn-block btn-lg" value="Add to cart" onclick="creatediv()">
+								<!-- <img src="addtocart.png" class="cart-img" > Add to cart -->
+							</form>
+						</div>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="product-cart col-sm-3 hidden-xs pull-right">
+		<div class="row">
+			<div class="product-cart-cartBtn col-sm-10">
+				<a href="#" class="btn btn-warning btn-block btn-lg"><img src="cart.png" class="cart-img"> Your cart</a>
+			</div>
+			
+			<div class="col-sm-8 col-sm-offset-2 product-cart-cartProduct" id="product-cart-cartProduct">
+				<div id="myCart" class="row">
+				</div>
+			</div>
+			
+			<!-- <div class="col-sm-10 col-sm-offset-1 product-cart-cartProduct">
+				<div class="row">
+					<img class="col-sm-4" src="shirt.jpg"> 
+					<div class="product-cart-cartProduct-description col-sm-8">
+						P V Modi School
+						<br>
+						Regular Shirt
+						<br>
+						Size : 8th
+						<br>
+						Quantity : xyz
+						<br>
+						Rs. 250
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1 product-cart-cartProduct">
+				<div class="row">
+					<img class="col-sm-4" src="shirt.jpg"> 
+					<div class="product-cart-cartProduct-description col-sm-8">
+						P V Modi School
+						<br>
+						Regular Shirt
+						<br>
+						Size : 8th
+						<br>
+						Quantity : xyz
+						<br>
+						Rs. 250
+					</div>
+				</div>
+			</div> -->
+			
+			<div class="product-cart-checkoutBtn col-sm-10" id="product-cart-checkoutBtn">
+				<button class="btn btn-primary btn-block btn-lg " type="button">
+  					Proceed to check out
+  					<span id="badge" class="badge">0</span>
+				</button>
+			</div>
+		
+		</div>
+	</div>
+	
+	<div class="product-navigation">
+		<nav role="navigation" class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">XYZ NAME</a>
+			</div>
+			<!-- Collection of nav links and other content for toggling -->
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+                
+					<!--<li><a href="#">Profile</a></li>
+					<li><a href="#">Messages</a></li>-->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="login"><a href="#"> Sign out</a></li>
+				</ul>
+			
+				<div class="col-sm-4 col-md-4 navbar-right">
+					<form class="navbar-form" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search your school name..." name="srch-term" id="srch-term">
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
+</body>
+	<script language="Javascript">
+
+		function creatediv(){
+			mNewObj = document.createElement('div');
+			mNewObj.class = "1";
+			// mNewObj.innerHTML = "<img class=\"col-sm-4\"src=\"shirt.jpg\" />P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250";
+			mNewObj.innerHTML="<img class=\"col-sm-4 cart-product-photo\" src=\"shirt.jpg\"> <div class=\"product-cart-cartProduct-description col-sm-8\">P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250</div>";
+			mNewObj.style.visibility="show";
+			document.getElementById("myCart").appendChild(mNewObj);
+
+			badgh = document.getElementById('badge');
+			badgh.innerHTML="1";
+
+			 // parent = document.getElementById('product-cart-cartProduct');
+			 // parent.style.backgroundColor="#ffffff";
+
+			// checkOut = document.getElementById('product-cart-checkoutBtn');
+			// checkOut.style.visibility ="hidden";
+		}
+	</script>
+</html>
