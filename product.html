@@ -404,7 +404,10 @@
 	
 </body>
 	<script language="Javascript">
-
+		var width = window.screen.availWidth;
+		if(width<=748){
+			alert("Sorry");
+		}
 		function creatediv(){
 			mNewObj = document.createElement('div');
 			mNewObj.class = "1";
