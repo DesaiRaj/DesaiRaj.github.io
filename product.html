@@ -189,17 +189,15 @@
 				height: 10vw;
 			}
 		}
-		@media only screen and (max-width: 1300px) {
-    			/* Style adjustments for non responsive websites */
-    			body{width:1300px;}
-		}
 	</style>
 	<script language="Javascript">
 		var width = window.screen.availWidth;
 		if(width<=748){
+			window.close();
 			window.open("test.html",'_self',null,null);
 		}
 		function creatediv(){
+			
 			mNewObj = document.createElement('div');
 			mNewObj.class = "1";
 			// mNewObj.innerHTML = "<img class=\"col-sm-4\"src=\"shirt.jpg\" />P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250";
