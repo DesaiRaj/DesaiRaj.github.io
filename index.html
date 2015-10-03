@@ -1,170 +1,274 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XYZ</title>
+<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script type="Javascript">
+	var width = window.screen.availWidth;
+	if(width<=748){
+		window.open("mobilePage.html",'_self');
+	}
+</script>
 
-<html>
-	<head>
+<style type="text/css">
 	
-		<link rel="icon" type="image/png" href="document.png">
-		<title>Raj Desai</title>
-		
-		
-		<meta name="keywords" content="Raj,raj,rajdesai,Raj Desai">
-		<meta name="Description" content="Hey, I am Raj Desai from DA-IICT and I am a developer">
-		<!-- Latest compiled and minified CSS -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	    
-	    <!-- Optional theme -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		<meta charset="utf-8">
-		
-		<link rel="stylesheet" type="text/css" href="home.css">
-		<link rel="stylesheet" type="text/css" href="aboutme.css">
-		<link rel="stylesheet" type="text/css" href="stats.css">
-		<link rel="stylesheet" type="text/css" href="resume.css">
-		<link rel="stylesheet" type="text/css" href="contact.css">
-	</head>
-	<body>
-		<div class="rajhome">
-			<div id="mainIMG">
-				<div id="tint"></div>
-			</div>
-			<div class="container">
-				<div class="title">
-					
-					<div class="rajname col-sm-6 col-sm-offset-2">
-						Raj Desai
-					</div>
-					<div class="line col-sm-6 col-sm-offset-2"></div>
-					<div class="des col-sm-6 col-sm-offset-2">2nd year ICT student</div>
-					<div class="line2 col-sm-6 col-sm-offset-2"></div>
-					
-				</div>
-			</div>
-		</div>
-		
-		<div class="aboutme">
-				<div class="abotmeheading">
-					<div class="heading col-sm-5 col-sm-offset-3">About Me</div>
-				</div>
-				<div class="aboutmecontent">
-					<div class="rajaboutmeimg col-sm-4">
-						<img src="Myimg.png" id="rajdp">
-					</div>
-					<div class="aboutmedata col-sm-8 ">
-						<p>Skilled in analyzing system engineering requirements, planning/designing and developing software and hardware.
-							Vast experience in troubleshooting computer based problems within applications.
-							Analytical skills: Good logic problem-solver.
-							Capable of working in a team and without supervision.</p>
-					</div>
-				</div>
-		</div>
-		
-		<div class="stats">
-			<div class="statsimg">
-				<div class="statstint"></div>
-			</div>
-			<div class="statics1 col-sm-3">NO of projects done
-				<div class="staticsdata">3</div>
+	@font-face{
+		font-family:'Eraser';
+		src: url('EraserDust.ttf')  format('truetype');
+	}
+	@font-face{
+			font-family: :'Avenir';
+			src: url('AvenirNextLTPro-Regular.otf');
+		}
+	html,body{
+		height:100%;
+		width: 100%;
+		font-family: Avenir;
+	}
+    .index-navigation{
+		position :fixed;
+		left:0px;
+		right:0px;
+    }
+	.index-GradientImage{
+		background:linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.4)), url(1.jpg);
+		background-repeat:no-repeat;
+		width:100%;
+		height:100%;
+	}
+	.box{
+		position:absolute;
+		top:40%;
+		text-align:center;
+		font-size:4vw;
+		color:white;
+	}
+	.index-GradientImage-SearchBar input#search{
+		width:100%;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 1px solid white;
+        font-size:2vw;
+        float: center;
+        padding-left: 10px;
+        /*-webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;*/
+		color:white;
+		/*font-family: Eraser;*/
+	}
+	.index-GradientImage-Text{
+		padding-bottom:10px;
+		font-family: Eraser;
+	}
+	@media (max-width: 768px) {
+		.box{
+			font-size: 5.5vw;
+		}
+		.index-GradientImage-SearchBar input#search{
+			font-size: 3.5vw;
+		}
+	}
+	.nav #login{
+		float:right;
+		padding-right:10px;
+	}
+	.black_overlay{
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+        padding: 0px;
+        margin: 0px;
+    }
+    .index-navigation-loginwindow{
+        display: none;
+        position: fixed;
+        padding: 0px;
+        margin: 0px;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        min-height: 50%;
+        height: auto;
+        z-index:1002;
+        background-color: #ffffff;
+        padding-bottom: 25px;
+    }
+    .login-close{
+    	margin: 10px;
+    }
+    .login-head{
+    	text-align: center;
+    }
+    .index-login-registerbtn{
+    	padding: 0px;
+    }
+    .xxx{
+    	padding: 0px;
+    }
+    .index-login-registerForgotpsd{
+    	text-align: center;
+    }
+    .index-navigation-loginwindow a{
+    	display: inline-block;
+    	line-height: 40px;
+    }
+    @media only screen and (max-width: 900px) {
+    	/* Style adjustments for non responsive websites */
+    	body{width:940px;}
+	}
+	.buyall{
+		position: absolute;
+		top: 90%;
+		text-align: center;
+		color: white;
+		border: 1px solid white;
+		font-size: 2vw;
+		background-color: rgba(0,0,0,0.4);
+		padding: 5px;
+		font-family: Eraser;
+	}
+	.buyall>a{
+		color: white;
+		text-decoration: none;
+	}
+	.header{
+		/*background-color: white;*/
+		font-family: Eraser;
+		/*border-bottom: 2px solid white;*/
+	}
+	.header-name{
+		line-height: 50px;
+		vertical-align: middle;
+		font-size: 3vw;
+		text-align: center;
+		color: white;
+	}
+	.header-name a{
+		color: white;
+		text-decoration: none;
+	}
+</style>
+</head> 
 
-			</div>
-			<div class="statics1 col-sm-3">Hours of work
-				<div class="staticsdata">152</div>
-			
-			</div>
-			<div class="statics1 col-sm-3">No of series watched
-				<div class="staticsdata">13</div>
-			
-			</div>
-			<div class="statics1 col-sm-3">No of movies watched
-				<div class="staticsdata">168</div>
-			
-			</div>
-		
-		</div>
-		
-		<div class="res" id="res">
-			<div id="resumex">
-				<div class="abotmeheading">
-						<div class="heading col-sm-5 col-sm-offset-3">My carrier</div>
-				</div>
-				
-				<div class="block col-sm-2 col-sm-offset-2">Education</div>
-				<div class="block col-sm-2 col-sm-offset-3">Experience</div>
-				
-				<div class="verticleline col-sm-1 col-sm-offset-3"></div>
-				<div class="verticleline col-sm-1 col-sm-offset-4"></div>
-				
-				
-				<div class="dateblock1 col-sm-1 ">March '13</div>
-				<div class="datablock1 col-sm-3">
-					<div class="datahead">12th graduate</div>
-					<div class="datablockdata">
-						<br />
-						<p>Completed my higher secondary education from Modi School Rajkot, Gujarat board with 99.7 percentile. </p>
-					</div>
-				</div>
-				
-				<div class="dateblock1 col-sm-1">July '13</div>
-				<div class="datablock1 col-sm-3">
-					<div class="datahead">DA-IICT</div>
-					<div class="datablockdata">
-						<br />
-						<p>Got admitted in Dhirubhai Ambani Institude of information and communication technology for ICT with minor in CS degree.</p>
-					</div>
-				</div>
-				
-				
-				<div class="dateblock3 col-sm-1">Sept '14</div>
-				<div class="datablock3 col-sm-3">
-					<div class="datahead">Communication project</div>
-					<div class="datablockdata">
-						<br />
-						<p>And anti-theft alarm system made using infrared detection and radio wave transmitter.</p>
-					</div>
-				</div>
-				
-				<div class="dateblock2 col-sm-1">Jan '15</div>
-				<div class="datablock2 col-sm-3">
-					<div class="datahead">Web-dev</div>
-					<div class="datablockdata">
-						<br />
-						<p>It all started as a hobby.Learnt full fron end styling and java scripting.</p>
-					</div>
-				</div>
-			</div>
+<body>
 
-		</div>
-			
-			
-		<div class="contatraj">
-			<div class="contactimg">
-				<div class="statstint"></div>
+	<!-- <div class="index-navigation">
+		<nav role="navigation" class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">XYZ NAME</a>
 			</div>
-			<div class="downloadresumeraj col-sm-3 col-sm-offset-4" id="dancelink">
-				<a href="#">Download Resume</a>
+			
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="login"><a href = "javascript:void(0)" onclick = "document.getElementById('loginwindow').style.display='block';document.getElementById('fade').style.display='block'"> Login </a></li>
+				</ul>
 			</div>
-		
+		</nav>
+	</div> -->
+<!--
+	End of Navigation bar
+--> 	
+<!--
+	Home page gradient tint image and search bar for schools
+-->
+	<div class="index-GradientImage">
+		<div class="header col-sm-12">
+			<div class="col-sm-2 header-name">
+				XYZ Name
+			</div>
+			<div class="col-sm-2 col-sm-offset-8 header-name">
+				<div id="login"><a href = "javascript:void(0)" onclick = "document.getElementById('loginwindow').style.display='block';document.getElementById('fade').style.display='block'"> Login </a></div>
+			</div>
 		</div>
-		
-		<div class="buffer"></div>
-		
-		<div class="rajinfo">
-			<div class="rajinfo1 col-sm-4">Contact Number
-				<div class="staticsdataraj">+91-7405493067</div>
+		<div class="box col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+			<div class="index-GradientImage-Text"> Start shopping with us !</div>
+			<div class="index-GradientImage-SearchBar">
+				<input type="text" id="search" list="languages" placeholder="Search your school name..." />
+				<datalist id="languages">
+				  <option value="HTML">
+				  <option value="CSS">
+				  <option value="JavaScript">
+				  <option value="Java">
+				  <option value="Ruby">
+				  <option value="PHP">
+				  <option value="Go">
+				  <option value="Erlang">
+				  <option value="Python">
+				  <option value="C">
+				  <option value="C#">
+				  <option value="C++">
+				</datalist>
+			</div>
+		</div>
+		<div class="col-sm-2 col-sm-offset-5 buyall">
+			<a href="shoppingAreaGeneral.html">Shop All School</a>
+		</div>
+	</div>
+	<!--
+		image set and search bar
+	-->
+	<div id="loginwindow" class="index-navigation-loginwindow">
+		<a href = "javascript:void(0)" onclick = "document.getElementById('loginwindow').style.display='none';document.getElementById('fade').style.display='none'" class="pull-right login-close">&#10006;</a>
+		<h1 class="login-head">Login</h1>
+		<hr>
+		<div class="row">
+			<form class="form-horizontal" role="form">
+				<div class="form-group ship-name col-sm-10">
+              		<div class="shipping-main-form-name">
+              		  <label class="col-sm-4 control-label">Email ID:</label>
+              		</div>
+              		<div class="col-sm-8">
+              		  <input type="text" class="form-control" placeholder="Emter email ID">
+              		</div>
+            	</div>
+            	<div class="form-group ship-name col-sm-10">
+              		<div class="shipping-main-form-name">
+              		  <label class="col-sm-4 control-label">Password</label>
+              		</div>
+              		<div class="col-sm-8">
+              		  <input type="password" class="form-control" placeholder="Password">
+              		</div>
+            	</div>
+				<div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+        			<button class="btn btn-warning btn-block btn-lg " type="button">
+        			    Login
+        			</button>
+    			</div>
+			</form>
+		</div>
+    	<hr>
+    	<div class="col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2 xxx">
+        	<div class="col-sm-6 index-login-registerbtn">
+        		<button class="btn btn-primary btn-lg btn-block btn-reg" type="button">
+        		    Register
+        		</button>
+        	</div>
+        	<div class="col-sm-6 index-login-registerForgotpsd">
+        		<a href="">Forgot password!!</a>
+        	</div>
+    	</div>
+	</div>
 
-			</div>
-			<div class="rajinfo1 col-sm-4">Works as
-				<div class="staticsdataraj">Software developer</div>
-			
-			</div>
-			<div class="rajinfo1 col-sm-4">E-mail ID
-				<div class="staticsdataraj">rd9699@gmail.com</div>
-			
-			</div>
-			
-		</div>
-			
-	<script type="text/javascript" src="script.js">
-	</script>
-	
-	</body>
-</html>
+	<div id="fade" class="black_overlay"></div>
+</body>
+</html>                                		

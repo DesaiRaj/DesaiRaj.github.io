@@ -9,10 +9,15 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style type="text/css">
+		@font-face{
+			font-family: :'Avenir';
+			src: url('AvenirNextLTPro-Regular.otf');
+		}	
 		html,body{
 			/*background:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(trial.jpg);*/
 			height:100%;
-			background-image: url('trial.jpg');
+			background-image: url('school.png');
+			font-family: Avenir;
 		}
 		.product-navigation{
 			position:fixed;
@@ -24,10 +29,10 @@
 			padding-right:10px;
 		}
 		.input-group{
-			width:100%;
+			width:50%;
 		}
 		.form-control{
-			width:100%;
+			width:50%;
 		}
 		.shpping-display-schoolName{
 			text-align: center;
@@ -51,6 +56,7 @@
 		}
 		.product-imageArea{
 			position: relative;
+			top: 50px;
 			min-height: 100%;
 			height:auto;
    			overflow:auto;
@@ -67,9 +73,11 @@
 			height: 25vw;
 		}
 		.product-imageArea-smallImg-img{
-			margin-top: 10px;
+			margin-top: 20px;
 			height: 7.5vw;
 			padding: 0;
+			margin-right: 1.3vw;
+			/*padding-right: 20px;*/
 		}
 		.product-imageArea-smallImg-img:hover{
    			border: 2px solid gray;
@@ -82,28 +90,24 @@
 		}
 		.product-info{
 			position: relative;
-			top: 50px;
+			top: 100px;
 			height: 100%;
 		}
-		.product-info-school{
-			padding: 0;
-			margin-top: 50px;
-
-		}
-		#product-info-school-Name{
-			font-size: 3vw;
+		.product-info-school-Name{
+			margin-top: 10px;
+			font-size: 2vw;
 		}
 		.product-info-school-logo{
 			height: 7.5vw;
 		}
 		.product-info-priceDetail{
 			background-color: #ffffff;
-			padding: 0;
 		}
 		.product-info-priceDetail-size{
 			display: inline-block;
-			width:50px; 
-			padding: 7px;
+			font-size: 1vw;
+			width:3.5vw; 
+			padding: 0.5vw;
 			margin-bottom: 10px;
 			margin-right: 5px;
 			background-color: #ffffff;
@@ -124,9 +128,8 @@
 			width: 100%;
 		}
 		.product-cart-checkoutBtn{
-			position: absolute;
-			width: 100%;
-			top: 100%;
+			position: relative;
+			/*top: 100%;*/
 			margin-top: 25px;
 		}
 		.product-cart-cartProduct{
@@ -140,6 +143,9 @@
 		}
 		h6{
 			font-size: 1.2vw;
+		}
+		h3{
+			font-size: 1.5vw;
 		}
 		.form-inline.form-inline-xs .form
 		{
@@ -189,19 +195,120 @@
 				height: 10vw;
 			}
 		}
-		@media only screen and (max-width: 1300px) {
-    			/* Style adjustments for non responsive websites */
-    			body{width:1300px;}
+		.cart-head{
+			text-align: center;
+			font-size: 25px;
+			padding: 10px;
+			border-bottom: 1px solid darkgrey;
+		}
+		.cart-div{
+			overflow: auto;
+			height: 300px;
+			border-bottom: 1px solid darkgrey;
+			padding: 0px;
+			margin: 0px;
+		}
+		.cart-total{
+			padding: 10px;
+			text-align: right;
+			font-size: 20px;
+			border-bottom: 1px solid darkgrey;
+		}
+		.btn{
+			border-radius: 0;
+			height: 4vw;
+			font-size: 1.5vw;
+			line-height: 1.5vw;
+		}
+		.cart-continue{
+			position: relative;
+			margin-top: 25px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.cart-mindiv{
+			padding: 0px;
+			border-bottom: 1px solid lightgrey;
+		}
+		.cart-div-school{
+			padding: 2px;
+		}
+		.cart-div-quantity{
+			padding: 0;
+			text-align: center;
+		}
+		.cart-div-mrp{
+			text-align: center;
+			padding: 0;
+		}
+		.cart-div-remove{
+			padding: 0;
+			text-align: center;
+		}
+		.cart-div-product{
+			padding: 2px;
+		}
+		.cart-div-size{
+			padding: 2px;
+		}
+		.shopping-cart{
+			position:fixed;
+			right: 0px;
+			top: 50px;
+			min-height: 100%;
+			height:auto;
+			background-color: #ffffff;
+			border-left : 1px solid gray;
+			box-shadow:0 0 10px #000000;
 		}
 	</style>
+	<script language="Javascript">
+
+		var width = window.screen.availWidth;
+		if(width<=748){
+			window.open("mobilePage.html",'_self');
+		}
+
+		function creatediv(){
+			mNewObj = document.createElement('div');
+			mNewObj.class = "1";
+			// mNewObj.innerHTML = "<img class=\"col-sm-4\"src=\"shirt.jpg\" />P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250";
+			mNewObj.innerHTML="<div class=\"cart-mindiv col-sm-12\"><div class=\"cart-div-school col-sm-5\">School-name</div><div class=\"cart-div-quantity col-sm-2\">xx</div><div class=\"cart-div-mrp col-sm-2\">Rs: xxx</div><div class=\"cart-div-remove col-sm-3\"><a href=\"#\">Remove</a></div><div class=\"cart-div-product col-sm-12\">Product name</div><div class=\"cart-div-size col-sm-12\">Size:xx</div></div>";
+			mNewObj.style.visibility="show";
+			document.getElementById("cart-div").appendChild(mNewObj);
+
+			badgh = document.getElementById('badge');
+			badgh.innerHTML="1";
+		}
+	</script>
 </head>
 <body>
-	<div class="col-sm-12 col-xs-12 shpping-display-schoolName">
-		Shree P V Modi 
+	<div class="shopping-cart col-sm-3">
+		<div class="row">
+			<div class="cart-head col-sm-12">
+				Shopping Cart
+			</div>
+			<div class="cart-div col-sm-12" id="cart-div">
+				
+			</div>
+			<div class="cart-total col-sm-12">
+				<b>Total: xxx </b>
+			</div>
+			<div class="product-cart-checkoutBtn col-sm-10 col-sm-offset-1">
+				<button class="btn btn-primary btn-block btn-lg " type="button">
+  					Proceed to check out
+  					<span id="badge" class="badge">0</span>
+				</button>
+			</div>
+
+			<div class="cart-continue col-sm-10 col-sm-offset-1">
+				<a href="shoppingAreaGeneral.html">Continue shopping !</a>
+			</div>
+		</div>
 	</div>
 	<div class="col-sm-4 col-xs-6 product-imageArea pull-left">
 		<div class="row">
-			<div class="product-imageArea-smallImg col-sm-3 col-xs-3">
+			<!-- <div class="product-imageArea-smallImg col-sm-3 col-xs-3">
 				<div class="row">
 					<div class="product-imageArea-smallImg-img col-sm-10 col-sm-offset-1">
 						<img src="shirt.jpg" width="100%" height="100%">
@@ -217,32 +324,46 @@
 						<img src="shirt.jpg" width="100%" height="100%">
 					</div>
 				</div>
-			</div>
-			<div class="col-sm-9 col-xs-9">
+			</div> -->
+			<div class="col-sm-12 col-xs-12">
 				<div class="row">
 					<div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 product-imageArea-largeImage">
 						<img src="shirt.jpg" width="100%" height="100%">
 					</div>
 				</div>
 			</div>
+			<div class="product-imageArea-smallImg-img col-sm-3 col-sm-offset-1">
+				<img src="shirt.jpg" width="100%" height="100%">
+			</div>
+			<div class="product-imageArea-smallImg-img col-sm-3">
+				<img src="shirt.jpg" width="100%" height="100%">
+			</div>
+			<div class="product-imageArea-smallImg-img col-sm-3">
+				<img src="shirt.jpg" width="100%" height="100%">
+			</div>
+
 		</div>
 		<br>
-		<div class="product-imageArea-discription">
+		<!-- <div class="`-imageArea-discription">
 			<ul>
 				<li><b>Free</b> Home/School DELIVERY</li>
 				<li><b>Authorized</b> by Scool</li>
 				<li><b>100%</b>AUTHENTIC BRANDSAND PRODUCTS </li>
 			</ul>
-		</div>
+		</div> -->
 	</div>
 	
 	<div class="product-info col-sm-5 col-xs-5">
 		<div class="row">
-			<div class="product-info-priceDetail col-sm-12 col-xs-12">
+			<div class="product-info-priceDetail col-sm-11">
 				<div class="row">
-					<div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1"><h1><b> MRP 250 Rs</b></h1></div>
+					<div class="col-sm-10 col-sm-offset-1 product-info-school-Name">
+						<b>School Name here</b>
+					</div>
+					<div class="col-sm-10 col-sm-offset-1">
+						<h3>MRP 250 Rs</h3>
+					</div>
 					<div class="col-sm-10 col-xs-10 col-sm-offset-1 col-xs-offset-1">
-						<h6>Select size according to standard</h6>
 						<h6><u><b>See size chart</b></u></h6>
 						<br>
 						<div class="product-info-priceDetail-size" id="1">
@@ -295,7 +416,7 @@
 						            <div class="input-group-addon">
 						                <span>Quantity</span>
 						            </div>
-						            <input class="form-control" type="number" value="1" min="1">
+						            <input class="form-control" type="number" size="5" value="1" min="1">
 						        </div>
 						    </div>
 						</form>
@@ -311,60 +432,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div class="product-cart col-sm-3 hidden-xs pull-right">
-		<div class="row">
-			<div class="product-cart-cartBtn col-sm-10">
-				<a href="#" class="btn btn-warning btn-block btn-lg"><img src="cart.png" class="cart-img"> Your cart</a>
-			</div>
-			
-			<div class="col-sm-8 col-sm-offset-2 product-cart-cartProduct" id="product-cart-cartProduct">
-				<div id="myCart" class="row">
-				</div>
-			</div>
-			
-			<!-- <div class="col-sm-10 col-sm-offset-1 product-cart-cartProduct">
-				<div class="row">
-					<img class="col-sm-4" src="shirt.jpg"> 
-					<div class="product-cart-cartProduct-description col-sm-8">
-						P V Modi School
-						<br>
-						Regular Shirt
-						<br>
-						Size : 8th
-						<br>
-						Quantity : xyz
-						<br>
-						Rs. 250
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-10 col-sm-offset-1 product-cart-cartProduct">
-				<div class="row">
-					<img class="col-sm-4" src="shirt.jpg"> 
-					<div class="product-cart-cartProduct-description col-sm-8">
-						P V Modi School
-						<br>
-						Regular Shirt
-						<br>
-						Size : 8th
-						<br>
-						Quantity : xyz
-						<br>
-						Rs. 250
-					</div>
-				</div>
-			</div> -->
-			
-			<div class="product-cart-checkoutBtn col-sm-10" id="product-cart-checkoutBtn">
-				<button class="btn btn-primary btn-block btn-lg " type="button">
-  					Proceed to check out
-  					<span id="badge" class="badge">0</span>
-				</button>
-			</div>
-		
 		</div>
 	</div>
 	
@@ -383,47 +450,13 @@
 			<div id="navbarCollapse" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
-                
-					<!--<li><a href="#">Profile</a></li>
-					<li><a href="#">Messages</a></li>-->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li id="login"><a href="#"> Sign out</a></li>
 				</ul>
-			
-				<div class="col-sm-4 col-md-4 navbar-right">
-					<form class="navbar-form" role="search">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search your school name..." name="srch-term" id="srch-term">
-						</div>
-					</form>
-				</div>
 			</div>
 		</nav>
 	</div>
 	
 </body>
-	<script language="Javascript">
-		var width = window.screen.availWidth;
-		if(width<=748){
-			alert("Sorry");
-		}
-		function creatediv(){
-			mNewObj = document.createElement('div');
-			mNewObj.class = "1";
-			// mNewObj.innerHTML = "<img class=\"col-sm-4\"src=\"shirt.jpg\" />P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250";
-			mNewObj.innerHTML="<img class=\"col-sm-4 cart-product-photo\" src=\"shirt.jpg\"> <div class=\"product-cart-cartProduct-description col-sm-8\">P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250</div>";
-			mNewObj.style.visibility="show";
-			document.getElementById("myCart").appendChild(mNewObj);
-
-			badgh = document.getElementById('badge');
-			badgh.innerHTML="1";
-
-			 // parent = document.getElementById('product-cart-cartProduct');
-			 // parent.style.backgroundColor="#ffffff";
-
-			// checkOut = document.getElementById('product-cart-checkoutBtn');
-			// checkOut.style.visibility ="hidden";
-		}
-	</script>
 </html>
