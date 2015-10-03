@@ -195,6 +195,7 @@
 				height: 10vw;
 			}
 		}
+<<<<<<< HEAD
 		.cart-head{
 			text-align: center;
 			font-size: 25px;
@@ -279,6 +280,32 @@
 
 			badgh = document.getElementById('badge');
 			badgh.innerHTML="1";
+=======
+	</style>
+	<script language="Javascript">
+		var width = window.screen.availWidth;
+		if(width<=748){
+			window.close();
+			window.open("test.html",'_self',null,null);
+		}
+		function creatediv(){
+			
+			mNewObj = document.createElement('div');
+			mNewObj.class = "1";
+			// mNewObj.innerHTML = "<img class=\"col-sm-4\"src=\"shirt.jpg\" />P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250";
+			mNewObj.innerHTML="<img class=\"col-sm-4 cart-product-photo\" src=\"shirt.jpg\"> <div class=\"product-cart-cartProduct-description col-sm-8\">P V Modi School<br>Regular Shirt<br>Size : 8th<br>Quantity : xyz<br>Rs. 250</div>";
+			mNewObj.style.visibility="show";
+			document.getElementById("myCart").appendChild(mNewObj);
+
+			badgh = document.getElementById('badge');
+			badgh.innerHTML="1";
+
+			 // parent = document.getElementById('product-cart-cartProduct');
+			 // parent.style.backgroundColor="#ffffff";
+
+			// checkOut = document.getElementById('product-cart-checkoutBtn');
+			// checkOut.style.visibility ="hidden";
+>>>>>>> origin/master
 		}
 	</script>
 </head>
@@ -459,4 +486,9 @@
 	</div>
 	
 </body>
+<<<<<<< HEAD
 </html>
+=======
+	
+</html>
+>>>>>>> origin/master
