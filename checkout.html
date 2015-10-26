@@ -1,0 +1,312 @@
+<html>
+<head>
+<title>XYZ</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+    @font-face{
+      font-family:'Eraser';
+      src: url('EraserDust.ttf')  format('truetype');
+    }
+    @font-face{
+      font-family: :'Avenir';
+      src: url('AvenirNextLTPro-Regular.otf');
+    }
+    html,body{
+      height:100%;
+      background-image: url('school.png');
+      font-family: Avenir;
+    }
+    .shopping-navigationTop{
+      position:fixed;
+      left:0px;
+      top: 0px;
+      right:0px;
+    }
+    /*.navbar{
+        background-image: url('1.jpg');
+    }*/
+    .nav #login{
+      padding-right:10px;
+    }
+    .checkout-head{
+      position: relative;
+      top: 50px;
+      text-align: center;
+      font-size: 25px;
+      padding: 10px;
+      font-style: italic;
+      border-bottom: 1px solid darkgrey;
+    }
+    .shipping{
+      position: relative;
+      top: 100px;
+      padding: 0px;
+      margin: 0 auto;
+      border-right: 1px dotted orange;
+      /*background-color: rgba(0,0,0,0.4);*/
+    }
+    .number{
+      font-size: 25px;
+      color: orange;
+      font-style: italic;
+      padding-bottom: 25px;
+      text-align: center;
+    }
+    .payment{
+      padding: 0px;
+      position: relative;
+      top: 100px;
+      border-right: 1px dotted orange;
+    }
+    .cart{
+      /*padding: 0;*/
+      position: relative;
+      top: 100px;
+      /*background-color: rgba(0,0,0,0.4);*/
+    }
+    .cart-product{
+      width: 100%;
+      background-color: white;
+      font-size: 15px;
+      font-style: bold;
+      /*height: 30vw;*/
+      /*overflow: auto;*/
+      /*border-bottom: 1px solid darkgrey;*/
+      padding: 0;
+      margin: 0 auto;
+      }
+    .cart-img{
+      height: 8vw;
+    }
+    .product-each{
+      border-bottom: 1px dotted darkgrey;
+      padding: 0;
+      margin: 0 auto;
+    }
+    .form-inline.form-inline-xs .form
+    {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0px;
+    }
+    .form-inline.form-inline-xs .form .input
+    {
+        display: inline-table;
+        vertical-align: middle;
+    }
+    .cart-product-school{
+      padding: 5px;
+      font-size: 15px;
+      vertical-align: middle;
+    }
+    .control-label{
+      vertical-align: middle;
+    }
+    .row{
+      margin: 0 auto;
+      padding: 0px;
+    }
+    .car-total{
+      padding: 5px;
+      font-size: 15px;
+      background-color: lightgrey;
+      /*font-weight: bold;*/
+      margin-top: 20px;
+    }
+    .cart-grandtotal{
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      padding: 5px;
+    }
+    .product-cart-checkoutBtn{
+      margin-top: 20px;
+    }
+    .btn{
+      border-radius: 0px;
+    }
+</style>
+</head>
+<body>
+  <!-- <div class="checkout-head">
+    Please enter your details below to complete your purchase !!
+  </div> -->
+  <div class="col-sm-4 shipping">
+    <div class="number">
+      1. Shipping address
+    </div>
+    <form class="form-horizontal" role="form">
+      <div class="form-group ship-name col-sm-12">
+        <div class="shipping-main-form-name">
+          <label class="col-sm-4 control-label">First Name:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Enter first name:">
+        </div>
+      </div>
+      <div class="form-group ship-name col-sm-12">
+        <div class="shipping-main-form-name">
+          <label class="col-sm-4 control-label">Last Name:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Enter last name:">
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-contactNo col-sm-12">
+        <div class="label-contact-no">
+          <label class="col-sm-4 control-label">Contact no:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="+91">
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-address col-sm-12">
+        <div class="label-adderess">
+          <label class="col-sm-4 control-label">Adderess:</label>
+        </div>
+        <div class="col-sm-8">
+          <textarea class="form-control custom-control" rows="3" style="resize:none" placeholder="Shipping address"></textarea>
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-Landmark col-sm-12">
+        <div class="label-landmars">
+          <label class="col-sm-4 control-label">Landmarks:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-pinCode col-sm-12">
+        <div class="label-pin-code">
+          <label class="col-sm-4 control-label">Pincode:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Shipping address pin code">
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-city col-sm-12">
+        <div class="label-city">
+          <label class="col-sm-4 control-label">City:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+      <div class="form-group shipping-main-form-state col-sm-12">
+        <div class="label-state">
+          <label class="col-sm-4 control-label">State/Region:</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-4 payment">
+    <div class="number">
+      2. Shipping method
+    </div>
+    <div class="number">
+      3. Payment method
+    </div>
+  </div>
+  <div class="col-sm-4 cart">
+    <div class="number">
+      4. Your cart
+    </div>
+    <div class="cart-product">
+      <div class="row product-each">
+      <div class="cart-img col-sm-4">
+        <img src="shirt.jpg" width="100%" height="100%">
+      </div>
+      <div class="col-sm-8">
+        <div class="cart-product-school">
+          Shree P V Modi
+        </div>
+        <div class="cart-product-school">
+          Shirt - Size xx 
+        </div>
+        <div class="cart-product-school"> 
+          Quantity: <img src="minus.png"> <input type="text" size="1" value="1" readonly> <img src="plus.png">
+        </div>
+        <div class="cart-product-school">
+          <b>Rs. 500</b> 
+          <img src="cross.png">
+        </div>
+      </div>
+    </div>
+    <div class="row product-each">
+      <div class="cart-img col-sm-4">
+        <img src="shirt.jpg" width="100%" height="100%">
+      </div>
+      <div class="col-sm-8">
+        <div class="cart-product-school">
+          Shree P V Modi
+        </div>
+        <div class="cart-product-school">
+          Shirt - Size xx 
+        </div>
+        <div class="cart-product-school"> 
+          Quantity: <img src="minus.png"> <input type="text" size="1" value="1" readonly> <img src="plus.png">
+        </div>
+        <div class="cart-product-school">
+          <b>Rs. 500</b> 
+          <img src="cross.png">
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="car-total">
+      <div class="row">
+        <div class="pull-left">Subtotal</div>
+        <div class="pull-right">XXX</div>
+      </div>
+      <div class="row">
+        <div class="pull-left">Shipping charges</div>
+        <div class="pull-right">XXX</div>
+      </div>
+      <div class="row cart-grandtotal">
+        <div class="pull-left">Grand Total</div>
+        <div class="pull-right">XXX</div>
+      </div>
+    </div>
+    <div class="product-cart-checkoutBtn">
+        <button class="btn btn-primary btn-block btn-lg " type="button">
+            Place my order!!
+        </button>
+      </div>
+
+  </div>
+
+
+<div class="shopping-navigationTop">
+    <nav role="navigation" class="navbar navbar-default">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">XYZ NAME</a>
+      </div>
+      <!-- Collection of nav links and other content for toggling -->
+      <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <!-- <li class="active"><a href="#">Home</a></li> -->
+                
+          <!--<li><a href="#">Profile</a></li>
+          <li><a href="#">Messages</a></li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="login"><a href="#"> Sign out</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
